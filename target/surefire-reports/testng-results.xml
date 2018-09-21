@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Regression Suite" duration-ms="5111" started-at="2018-09-20T12:10:36Z" finished-at="2018-09-20T12:10:41Z">
+    <groups>
+    </groups>
+    <test name="Regression Test Suite" duration-ms="5111" started-at="2018-09-20T12:10:36Z" finished-at="2018-09-20T12:10:41Z">
+      <class name="testcases.UserRegistrationTest">
+        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:testcases.UserRegistrationTest@5d24703e]" name="startDriver" is-config="true" duration-ms="10494" started-at="2018-09-20T12:10:25Z" finished-at="2018-09-20T12:10:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome-headless]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startDriver -->
+        <test-method status="PASS" signature="UserRegisterSuccessfully()[pri:0, instance:testcases.UserRegistrationTest@5d24703e]" name="UserRegisterSuccessfully" duration-ms="5085" started-at="2018-09-20T12:10:36Z" finished-at="2018-09-20T12:10:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserRegisterSuccessfully -->
+        <test-method status="PASS" signature="screenShotOnFailure(org.testng.ITestResult)[pri:0, instance:testcases.UserRegistrationTest@5d24703e]" name="screenShotOnFailure" is-config="true" duration-ms="1" started-at="2018-09-20T12:10:41Z" finished-at="2018-09-20T12:10:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserRegisterSuccessfully status=SUCCESS method=UserRegistrationTest.UserRegisterSuccessfully()[pri:0, instance:testcases.UserRegistrationTest@5d24703e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShotOnFailure -->
+        <test-method status="PASS" signature="exitDriver()[pri:0, instance:testcases.UserRegistrationTest@5d24703e]" name="exitDriver" is-config="true" duration-ms="573" started-at="2018-09-20T12:10:41Z" finished-at="2018-09-20T12:10:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- exitDriver -->
+      </class> <!-- testcases.UserRegistrationTest -->
+    </test> <!-- Regression Test Suite -->
+  </suite> <!-- Regression Suite -->
+</testng-results>

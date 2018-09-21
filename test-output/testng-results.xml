@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="73287" started-at="2018-09-21T19:09:31Z" finished-at="2018-09-21T19:10:44Z">
+    <groups>
+    </groups>
+    <test name="Regression Test 0" duration-ms="20254" started-at="2018-09-21T19:09:31Z" finished-at="2018-09-21T19:09:51Z">
+      <class name="testcases.UserFillContactForumTest">
+        <test-method status="PASS" signature="UserFillForumSuccessfully()[pri:5, instance:testcases.UserFillContactForumTest@cef23a8]" name="UserFillForumSuccessfully" duration-ms="16884" started-at="2018-09-21T19:09:31Z" finished-at="2018-09-21T19:09:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserFillForumSuccessfully -->
+        <test-method status="PASS" signature="screenShotOnFailure(org.testng.ITestResult)[pri:0, instance:testcases.UserFillContactForumTest@cef23a8]" name="screenShotOnFailure" is-config="true" duration-ms="3342" started-at="2018-09-21T19:09:48Z" finished-at="2018-09-21T19:09:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserFillForumSuccessfully status=SUCCESS method=UserFillContactForumTest.UserFillForumSuccessfully()[pri:5, instance:testcases.UserFillContactForumTest@cef23a8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShotOnFailure -->
+      </class> <!-- testcases.UserFillContactForumTest -->
+    </test> <!-- Regression Test 0 -->
+    <test name="Regression Test 1" duration-ms="8290" started-at="2018-09-21T19:09:51Z" finished-at="2018-09-21T19:10:00Z">
+      <class name="testcases.UserNavigateToMenuTest">
+        <test-method status="PASS" signature="UserNavigateSuccessfully()[pri:3, instance:testcases.UserNavigateToMenuTest@6debf1b8]" name="UserNavigateSuccessfully" duration-ms="4966" started-at="2018-09-21T19:09:51Z" finished-at="2018-09-21T19:09:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserNavigateSuccessfully -->
+        <test-method status="PASS" signature="screenShotOnFailure(org.testng.ITestResult)[pri:0, instance:testcases.UserNavigateToMenuTest@6debf1b8]" name="screenShotOnFailure" is-config="true" duration-ms="3322" started-at="2018-09-21T19:09:56Z" finished-at="2018-09-21T19:10:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserNavigateSuccessfully status=SUCCESS method=UserNavigateToMenuTest.UserNavigateSuccessfully()[pri:3, instance:testcases.UserNavigateToMenuTest@6debf1b8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShotOnFailure -->
+      </class> <!-- testcases.UserNavigateToMenuTest -->
+    </test> <!-- Regression Test 1 -->
+    <test name="Regression Test 2" duration-ms="5730" started-at="2018-09-21T19:10:00Z" finished-at="2018-09-21T19:10:05Z">
+      <class name="testcases.UserSearchTest">
+        <test-method status="PASS" signature="UserSearchSuccessfully()[pri:2, instance:testcases.UserSearchTest@240e61]" name="UserSearchSuccessfully" duration-ms="2391" started-at="2018-09-21T19:10:00Z" finished-at="2018-09-21T19:10:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserSearchSuccessfully -->
+        <test-method status="PASS" signature="screenShotOnFailure(org.testng.ITestResult)[pri:0, instance:testcases.UserSearchTest@240e61]" name="screenShotOnFailure" is-config="true" duration-ms="3338" started-at="2018-09-21T19:10:02Z" finished-at="2018-09-21T19:10:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserSearchSuccessfully status=SUCCESS method=UserSearchTest.UserSearchSuccessfully()[pri:2, instance:testcases.UserSearchTest@240e61] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShotOnFailure -->
+      </class> <!-- testcases.UserSearchTest -->
+    </test> <!-- Regression Test 2 -->
+    <test name="Regression Test 3" duration-ms="6034" started-at="2018-09-21T19:10:05Z" finished-at="2018-09-21T19:10:12Z">
+      <class name="testcases.UserSubscribeNewsletterTest">
+        <test-method status="PASS" signature="UserSearchSuccessfully()[pri:4, instance:testcases.UserSubscribeNewsletterTest@316b57e0]" name="UserSearchSuccessfully" duration-ms="2648" started-at="2018-09-21T19:10:05Z" finished-at="2018-09-21T19:10:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserSearchSuccessfully -->
+        <test-method status="PASS" signature="screenShotOnFailure(org.testng.ITestResult)[pri:0, instance:testcases.UserSubscribeNewsletterTest@316b57e0]" name="screenShotOnFailure" is-config="true" duration-ms="3382" started-at="2018-09-21T19:10:08Z" finished-at="2018-09-21T19:10:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserSearchSuccessfully status=SUCCESS method=UserSubscribeNewsletterTest.UserSearchSuccessfully()[pri:4, instance:testcases.UserSubscribeNewsletterTest@316b57e0] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShotOnFailure -->
+      </class> <!-- testcases.UserSubscribeNewsletterTest -->
+    </test> <!-- Regression Test 3 -->
+    <test name="Regression Test 4" duration-ms="21264" started-at="2018-09-21T19:10:12Z" finished-at="2018-09-21T19:10:33Z">
+      <class name="testcases.ValidateLinksTest">
+        <test-method status="PASS" signature="validateAllLink()[pri:6, instance:testcases.ValidateLinksTest@708c9f9e]" name="validateAllLink" duration-ms="17628" started-at="2018-09-21T19:10:12Z" finished-at="2018-09-21T19:10:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateAllLink -->
+        <test-method status="PASS" signature="screenShotOnFailure(org.testng.ITestResult)[pri:0, instance:testcases.ValidateLinksTest@708c9f9e]" name="screenShotOnFailure" is-config="true" duration-ms="3636" started-at="2018-09-21T19:10:29Z" finished-at="2018-09-21T19:10:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=validateAllLink status=SUCCESS method=ValidateLinksTest.validateAllLink()[pri:6, instance:testcases.ValidateLinksTest@708c9f9e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShotOnFailure -->
+      </class> <!-- testcases.ValidateLinksTest -->
+    </test> <!-- Regression Test 4 -->
+    <test name="Regression Test 5" duration-ms="11604" started-at="2018-09-21T19:10:33Z" finished-at="2018-09-21T19:10:44Z">
+      <class name="testcases.ChangeLanguageTest">
+        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:testcases.ChangeLanguageTest@55c33059]" name="startDriver" is-config="true" duration-ms="15981" started-at="2018-09-21T19:09:15Z" finished-at="2018-09-21T19:09:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startDriver -->
+        <test-method status="PASS" signature="ChangeLanguage()[pri:1, instance:testcases.ChangeLanguageTest@55c33059]" name="ChangeLanguage" duration-ms="8274" started-at="2018-09-21T19:10:33Z" finished-at="2018-09-21T19:10:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ChangeLanguage -->
+        <test-method status="PASS" signature="screenShotOnFailure(org.testng.ITestResult)[pri:0, instance:testcases.ChangeLanguageTest@55c33059]" name="screenShotOnFailure" is-config="true" duration-ms="3329" started-at="2018-09-21T19:10:41Z" finished-at="2018-09-21T19:10:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ChangeLanguage status=SUCCESS method=ChangeLanguageTest.ChangeLanguage()[pri:1, instance:testcases.ChangeLanguageTest@55c33059] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShotOnFailure -->
+        <test-method status="PASS" signature="exitDriver()[pri:0, instance:testcases.ChangeLanguageTest@55c33059]" name="exitDriver" is-config="true" duration-ms="846" started-at="2018-09-21T19:10:44Z" finished-at="2018-09-21T19:10:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- exitDriver -->
+      </class> <!-- testcases.ChangeLanguageTest -->
+    </test> <!-- Regression Test 5 -->
+  </suite> <!-- Suite -->
+</testng-results>
