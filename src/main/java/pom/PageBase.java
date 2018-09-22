@@ -41,7 +41,6 @@ public class PageBase {
 	}
 
 	public void scrollToBottom() {
-		// jse.executeScript("arguments[0].scrollIntoView(true);",1900);
 
 		jse.executeScript("scrollBy(0,4500)");
 	}
@@ -63,8 +62,6 @@ public class PageBase {
 
 			{
 			}
-
-			//
 
 		}
 

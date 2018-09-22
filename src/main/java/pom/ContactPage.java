@@ -1,8 +1,9 @@
 package pom;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+
 
 public class ContactPage extends PageBase {
 
@@ -10,35 +11,37 @@ public class ContactPage extends PageBase {
 		super(driver);
 
 	}
+public static String message;
 
-	@FindBy(css = "textarea.contact-msg")
-	WebElement contactMessage;
+	public void fillContactForum(WebDriver driver, String contactMessageLocator, String fullNameLocator,
+			String emailTXTLocator, String confirmCheckBoxLocator, String clickButtonLocator, String Message,
+			String FullName, String Email) throws InterruptedException {
 
-	@FindBy(css = "input.contact-input")
-	WebElement fullName;
-
-	@FindBy(id = "contact-email")
-	WebElement emailTXT;
-
-	@FindBy(id = "confirm")
-	WebElement confirmCheckBox;
-
-	@FindBy(css = "button.contact-submit")
-	WebElement contactBtn;
-
-	@FindBy(css = "p.feedback")
-	public WebElement successMessage;
-
-	public void fillContactForum(String Message, String FullName, String Email) throws InterruptedException {
-
+		WebElement contactMessage = driver.findElement(By.cssSelector(contactMessageLocator));
 		setText(contactMessage, Message);
-		setText(fullName, FullName);
+
+		WebElement fullNameTxt = driver.findElement(By.cssSelector(fullNameLocator));
+		setText(fullNameTxt, FullName);
+
+		WebElement emailTXT = driver.findElement(By.id(emailTXTLocator));
 		setText(emailTXT, Email);
-		Thread.sleep(1000);
+		Thread.sleep(500);
+
+		WebElement confirmCheckBox = driver.findElement(By.id(confirmCheckBoxLocator));
 		clickButton(confirmCheckBox);
-		jse.executeScript("scrollBy(0,2000)");
-		Thread.sleep(1000);
+
+		jse.executeScript("scrollBy(0,1500)");
+		Thread.sleep(500);
+
+		WebElement contactBtn = driver.findElement(By.cssSelector(clickButtonLocator));
 		clickButton(contactBtn);
+	}
+
+	public void ValidateMessage(WebDriver driver, String successMessageLocator) {
+
+		WebElement successMessage = driver.findElement(By.cssSelector(successMessageLocator));
+		 message = successMessage.getText();
+		
 	}
 
 }

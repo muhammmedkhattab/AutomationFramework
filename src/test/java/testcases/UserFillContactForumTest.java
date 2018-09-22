@@ -9,17 +9,23 @@ import pom.HomePage;
 import pom.PageBase;
 
 public class UserFillContactForumTest extends TestBase {
+	
 	Faker fakeData = new Faker();
 	String email = fakeData.internet().emailAddress();
 	String Name = fakeData.name().fullName();
 	String Message = fakeData.gameOfThrones().character();
-	String homePageURL = DataDriven.getCellData("Prod_TD", "HomePageProdURL", 1);
+	String contactLinkLocator = DataDriven.getCellData("HomePageLocators", "HomeContactLink", 1);
+	String urlContactPage = DataDriven.getCellData("Prod_TD", "ContactPageURL", 1);
+	String messageLocator = DataDriven.getCellData("sheet1", "ContactMessage", 1);
+	String fullNameLocator = DataDriven.getCellData("sheet1", "ContactFullName", 1);
+	String emailLocator = DataDriven.getCellData("sheet1", "ContactEmail", 1);
+	String confirmCheckBoxLocator = DataDriven.getCellData("sheet1", "ContactConfirmCheckBox", 1);
+	String submitBtnLocator = DataDriven.getCellData("sheet1", "ContactSubmitBtn", 1);
+	String successMessageLocator = DataDriven.getCellData("sheet1", "ContactSuccessMessage", 1);
+	String messageRegex = DataDriven.getCellData("Prod_TD", "MessageRegex", 1);
 	HomePage homeObject;
 	ContactPage contactObject;
 	PageBase PageObject;
-
-	// WindowHandling();
-	String urlContactPage = DataDriven.getCellData("Prod_TD", "ContactPageURL", 1);
 
 	@Test(priority = 5)
 	public void UserFillForumSuccessfully() throws InterruptedException {
@@ -28,15 +34,16 @@ public class UserFillContactForumTest extends TestBase {
 		contactObject = new ContactPage(driver);
 		PageObject = new PageBase(driver);
 
-		homeObject.clickOnContactLink();
+		homeObject.clickOnContactLink(driver, contactLinkLocator);
 
 		PageObject.WindowHandling(driver, urlContactPage);
 
-		contactObject.fillContactForum(Message, Name, email);
+		contactObject.fillContactForum(driver, messageLocator, fullNameLocator, emailLocator, confirmCheckBoxLocator,
+				submitBtnLocator, Message, Name, email);
 
-		String message = contactObject.successMessage.getText();
-		String regex = ".*(Message|Successfully).*";
-		Assert.assertTrue(message.matches(regex));
+		contactObject.ValidateMessage(driver, successMessageLocator);
+		String regex = messageRegex;
+		Assert.assertTrue(ContactPage.message.matches(regex));
 		PageObject.redirectToDriver(driver);
 
 	}

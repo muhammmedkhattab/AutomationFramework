@@ -61,19 +61,22 @@ public class TestBase {
 	}
 
 	@AfterMethod
-	public void screenShotOnFailure(ITestResult result) {
+	public void screenShotOnFailure(ITestResult result) throws InterruptedException {
 
 		if (ITestResult.FAILURE == result.getStatus()) {
 			// Take a screenshot when TC failed and add it in the the Screenshots Folder
+			Thread.sleep(500);
 			Helper.captureScreenShot(driver, result.getName().concat("TC Failed"));
+			Thread.sleep(500);
 			System.out.println("Failed!");
 			System.out.println("Taking Screenshot....");
 
 		}
 		// Take a screenshot when TC Passed and add it in the the Screenshots Folder
 		else if (ITestResult.SUCCESS == result.getStatus()) {
-
+			Thread.sleep(500);
 			Helper.captureScreenShot(driver, result.getName().concat("TC Passed"));
+			Thread.sleep(500);
 			System.out.println("Passed!");
 			System.out.println("Taking Screenshot....");
 

@@ -1,8 +1,9 @@
 package pom;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+
 
 public class SearchPage extends PageBase {
 
@@ -11,12 +12,10 @@ public class SearchPage extends PageBase {
 
 	}
 
-	// Search field
-	@FindBy(css = "input.input.search-input")
-	WebElement searchInputTXT;
-
-	public void searchForValue(String searchTXT) {
-
+	public void searchForValue(WebDriver driver,String searchValueLocator,String searchTXT) {
+		
+		WebElement searchInputTXT = driver.findElement(By.cssSelector((searchValueLocator)));
+		 
 		searchInputTXT.clear();
 		setText(searchInputTXT, searchTXT);
 		KeyPressEnter(searchInputTXT);

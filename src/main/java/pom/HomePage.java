@@ -1,16 +1,12 @@
 package pom;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-import data.DataDriven;
-
 public class HomePage extends PageBase {
-	// DataDriven DD =new DataDriven();
-	String SearchObjectByCSS = DataDriven.getCellData("Prod_TD", "HomeSearchLocator", 1);
 
 	public HomePage(WebDriver driver) {
 
@@ -20,85 +16,59 @@ public class HomePage extends PageBase {
 
 	}
 
-	// String searchCSS="div.search-icon";
-	// Search
-	@FindBy(css = "div.search-icon")
-
-	// @FindBy(how=How.CSS, using=SearchObjectByCSS)
-	WebElement searchLink;
-
-	// WebElement searchLink =
-	// driver.findElement(By.cssSelector("div.search-icon"));
-	// Language dropdown
-	@FindBy(css = "select.locales-dropdown")
-	WebElement languageDropdownList;
-
-	// checkbox
-	@FindBy(id = "confirm")
-	WebElement confirmbtn;
-
-	// email
-	@FindBy(name = "email")
-	WebElement emailTXT;
-
-	// submit
-
-	@FindBy(css = "button.submit")
-	WebElement submitBtn;
-
-	// validatemessage
-
-	@FindBy(css = "div.hero-title.caps")
-	public WebElement successMessage2;
-
-	// Contact
-
-	@FindBy(linkText = "Contact")
-	WebElement contactLink;
-
-	// side menu
-	@FindBy(css = "div.nav-icon")
-	WebElement sideMenuBtn;
-
-	// item in side menu
-	@FindBy(linkText = "WEST")
-	WebElement menuItem;
-
-	public void openSearch() throws InterruptedException {
-		Thread.sleep(1000);
-		clickButton(searchLink);
+	// Search Method
+	public void openSearch(WebDriver driver, String searchLocator) {
+		WebElement searchtxt = driver.findElement(By.cssSelector((searchLocator)));
+		clickButton(searchtxt);
 
 	}
 
-	public void clickOnContactLink() {
+	// Click Method
+	public void clickOnContactLink(WebDriver driver, String contactLinkLocator) {
+
+		WebElement contactBtn = driver.findElement(By.linkText((contactLinkLocator)));
 		scrollToBottom();
-		clickButton(contactLink);
+		clickButton(contactBtn);
 
 	}
 
-	public void Subscribe(String email) throws InterruptedException {
+	//// Subscribe Method
+	public void Subscribe(WebDriver driver, String confirmbtnLocator, String emailLocator, String submitBtnLocator,
+			String email) throws InterruptedException {
 
 		scrollToBottom();
+		Thread.sleep(500);
 
-		Thread.sleep(1000);
-
+		WebElement confirmbtn = driver.findElement(By.id((confirmbtnLocator)));
 		clickButton(confirmbtn);
+
+		WebElement emailTXT = driver.findElement(By.name((emailLocator)));
 		clickButton(emailTXT);
 		setText(emailTXT, email);
+
+		WebElement submitBtn = driver.findElement(By.cssSelector((submitBtnLocator)));
 		clickButton(submitBtn);
-		scrollToBottom();
 
 	}
 
-	public void navigateSideMenu() {
+	public void navigateSideMenu(WebDriver driver, String sideMenuBtnLocator, String menuItemLocator) {
+
+		// side menu
+		WebElement sideMenuBtn = driver.findElement(By.cssSelector((sideMenuBtnLocator)));
 		clickButton(sideMenuBtn);
+
+		// item in side menu
+		WebElement menuItem = driver.findElement(By.linkText(menuItemLocator));
 		clickButton(menuItem);
 
 	}
 
-	public void selectLanguage(String Language) {
+	// done
+	public void selectLanguage(WebDriver driver, String searchlocator, String Language) {
 
 		scrollToBottom();
+
+		WebElement languageDropdownList = driver.findElement(By.cssSelector((searchlocator)));
 		select = new Select(languageDropdownList);
 		select.selectByVisibleText(Language);
 	}
