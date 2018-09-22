@@ -9,14 +9,10 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import data.DataDriven;
-import pom.ContactPage;
 import utilities.Helper;
 
 public class TestBase {
@@ -60,8 +56,9 @@ public class TestBase {
 	@AfterSuite
 	public void exitDriver() throws InterruptedException {
 
-		driver.quit();
-
+//		driver.quit();
+		//driver =null;
+	
 	}
 
 	@AfterMethod
@@ -85,6 +82,9 @@ public class TestBase {
 		}
 	}
 
-	ContactPage contactObject;
+public static void getdriver(String url) {
+	//return driver;
+	driver.navigate().to(url);
+}
 
 }

@@ -21,6 +21,6 @@ public class UserNavigateToMenuTest extends TestBase {
 		
 		String url = driver.getCurrentUrl();
 		Assert.assertTrue(url.equalsIgnoreCase(WestPageURL));
-		driver.navigate().to(homePageURL);
+		getdriver(homePageURL);
 	}
 }

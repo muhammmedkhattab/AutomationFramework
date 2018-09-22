@@ -18,7 +18,7 @@ public class UserSubscribeNewsletterTest extends TestBase {
 
 		homeObject = new HomePage(driver);
 		homeObject.Subscribe(email);
-		driver.navigate().to(homePageURL);
+		getdriver(homePageURL);
 
 	}
 }

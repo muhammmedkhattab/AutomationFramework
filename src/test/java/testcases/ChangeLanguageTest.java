@@ -27,7 +27,7 @@ public class ChangeLanguageTest extends TestBase {
 		Assert.assertTrue(url.equalsIgnoreCase(DeutschlandURL));
 		Thread.sleep(500);
 		homeObject.selectLanguage(CountriesLanguageUSA);
-		driver.navigate().to(homePageURL);
+		getdriver(homePageURL);
 
 	
 	

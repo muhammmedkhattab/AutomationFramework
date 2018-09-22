@@ -13,6 +13,6 @@ public class ValidateLinksTest extends TestBase {
 		Thread.sleep(500);
 		pageObject = new PageBase(driver);
 		pageObject.testBrokenLinks(driver);
-
+		
 	}
 }

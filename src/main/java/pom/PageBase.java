@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -15,15 +14,14 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-import com.google.common.base.Verify;
-
 public class PageBase {
 
 	protected WebDriver driver;
 	public static JavascriptExecutor jse;
 	public Select select;
 	public Actions action;
-
+	public static String currentWindowID = null;
+	
 	// create constructor
 	public PageBase(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -54,7 +52,7 @@ public class PageBase {
 	}
 
 	public void WindowHandling(WebDriver driver, String NewPageURL) {
-		 String currentWindowID =driver.getWindowHandle();
+		  currentWindowID =driver.getWindowHandle();
 
 		for (String windowID : driver.getWindowHandles()) {
 
@@ -64,20 +62,20 @@ public class PageBase {
 			if (URL.contains(URL))
 				
 			{
-
-
 			}
-			else {
-				driver.switchTo().window(currentWindowID);
-			}
-		}
+			
+			//
+		
+		}	
+	
 
 	}
 
-	public void saveCurrentURL(WebDriver driver) {
+	public void redirectToDriver(WebDriver driver) {
 
-		String currentWindowID = null;
-		currentWindowID = driver.getCurrentUrl();
+	
+		driver.switchTo().window(currentWindowID);
+		System.out.println("URL:  "+driver.getCurrentUrl());
 
 	}
 

@@ -27,15 +27,20 @@ public class UserFillContactForumTest extends TestBase {
 		homeObject = new HomePage(driver);
 		contactObject = new ContactPage(driver);
 		PageObject = new PageBase(driver);
-		PageObject.saveCurrentURL(driver);
-		homeObject.clickOnContactForm();
+		
+		homeObject.clickOnContactLink();
 
 		PageObject.WindowHandling(driver, urlContactPage);
+		
+		
 		contactObject.fillContactForum(Message, Name, email);
 
 		String message = contactObject.successMessage.getText();
 		String regex = ".*(Message|Successfully).*";
 		Assert.assertTrue(message.matches(regex));
-		driver.navigate().to(homePageURL);
+			
+		//Thread.sleep(500);
+		PageObject.redirectToDriver(driver);
+		getdriver(homePageURL);
 	}
 }

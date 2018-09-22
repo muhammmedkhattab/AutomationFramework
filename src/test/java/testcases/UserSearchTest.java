@@ -22,6 +22,6 @@ public class UserSearchTest extends TestBase {
 		homeObject.openSearch();
 		searchObject.searchForValue(searchTXT);
 		
-		driver.navigate().to(homePageURL);
+		getdriver(homePageURL);
 	}
 }

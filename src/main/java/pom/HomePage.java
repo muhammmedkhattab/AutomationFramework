@@ -60,7 +60,7 @@ public class HomePage extends PageBase {
 
 	}
 
-	public void clickOnContactForm() {
+	public void clickOnContactLink() {
 		scrollToBottom();
 		clickButton(contactLink);
 
