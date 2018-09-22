@@ -1,6 +1,5 @@
 package testcases;
 
-
 import org.testng.annotations.Test;
 import com.github.javafaker.Faker;
 
@@ -18,7 +17,6 @@ public class UserSubscribeNewsletterTest extends TestBase {
 
 		homeObject = new HomePage(driver);
 		homeObject.Subscribe(email);
-		getdriver(homePageURL);
 
 	}
 }

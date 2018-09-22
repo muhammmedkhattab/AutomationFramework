@@ -10,7 +10,7 @@ public class ContactPage extends PageBase {
 		super(driver);
 
 	}
-	
+
 	@FindBy(css = "textarea.contact-msg")
 	WebElement contactMessage;
 

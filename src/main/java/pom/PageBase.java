@@ -21,11 +21,11 @@ public class PageBase {
 	public Select select;
 	public Actions action;
 	public static String currentWindowID = null;
-	
+
 	// create constructor
 	public PageBase(WebDriver driver) {
 		PageFactory.initElements(driver, this);
-	
+
 	}
 
 	// Method to Click Buttons
@@ -52,7 +52,7 @@ public class PageBase {
 	}
 
 	public void WindowHandling(WebDriver driver, String NewPageURL) {
-		  currentWindowID =driver.getWindowHandle();
+		currentWindowID = driver.getWindowHandle();
 
 		for (String windowID : driver.getWindowHandles()) {
 
@@ -60,22 +60,20 @@ public class PageBase {
 			String URL = driver.getCurrentUrl();
 
 			if (URL.contains(URL))
-				
+
 			{
 			}
-			
+
 			//
-		
-		}	
-	
+
+		}
 
 	}
 
 	public void redirectToDriver(WebDriver driver) {
 
-	
 		driver.switchTo().window(currentWindowID);
-		System.out.println("URL:  "+driver.getCurrentUrl());
+		System.out.println("URL:  " + driver.getCurrentUrl());
 
 	}
 

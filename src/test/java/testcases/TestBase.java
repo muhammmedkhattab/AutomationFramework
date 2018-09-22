@@ -8,8 +8,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import data.DataDriven;
@@ -19,7 +19,7 @@ public class TestBase {
 
 	public static WebDriver driver;
 
-	@BeforeSuite
+	@BeforeTest
 	@Parameters({ "browser" })
 	public void startDriver(@Optional("Chrome") String browserName) {
 
@@ -53,12 +53,11 @@ public class TestBase {
 		//
 	}
 
-	@AfterSuite
+	@AfterTest
 	public void exitDriver() throws InterruptedException {
 
-//		driver.quit();
-		//driver =null;
-	
+		driver.quit();
+
 	}
 
 	@AfterMethod
@@ -69,22 +68,16 @@ public class TestBase {
 			Helper.captureScreenShot(driver, result.getName().concat("TC Failed"));
 			System.out.println("Failed!");
 			System.out.println("Taking Screenshot....");
-			
+
 		}
 		// Take a screenshot when TC Passed and add it in the the Screenshots Folder
 		else if (ITestResult.SUCCESS == result.getStatus()) {
 
-			
 			Helper.captureScreenShot(driver, result.getName().concat("TC Passed"));
 			System.out.println("Passed!");
 			System.out.println("Taking Screenshot....");
-			
+
 		}
 	}
-
-public static void getdriver(String url) {
-	//return driver;
-	driver.navigate().to(url);
-}
 
 }

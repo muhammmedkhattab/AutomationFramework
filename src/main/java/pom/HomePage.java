@@ -6,19 +6,29 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
+import data.DataDriven;
+
 public class HomePage extends PageBase {
+	// DataDriven DD =new DataDriven();
+	String SearchObjectByCSS = DataDriven.getCellData("Prod_TD", "HomeSearchLocator", 1);
 
 	public HomePage(WebDriver driver) {
+
 		super(driver);
 		// scroll down
 		jse = (JavascriptExecutor) driver;
 
 	}
 
+	// String searchCSS="div.search-icon";
 	// Search
 	@FindBy(css = "div.search-icon")
+
+	// @FindBy(how=How.CSS, using=SearchObjectByCSS)
 	WebElement searchLink;
 
+	// WebElement searchLink =
+	// driver.findElement(By.cssSelector("div.search-icon"));
 	// Language dropdown
 	@FindBy(css = "select.locales-dropdown")
 	WebElement languageDropdownList;

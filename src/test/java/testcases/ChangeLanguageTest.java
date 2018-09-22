@@ -2,7 +2,6 @@ package testcases;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import data.DataDriven;
 import pom.HomePage;
 import pom.PageBase;
@@ -20,16 +19,14 @@ public class ChangeLanguageTest extends TestBase {
 
 		homeObject = new HomePage(driver);
 		//PageObject = new PageBase(driver);
-		
+
 		homeObject.selectLanguage(CountriesLanguageDeutschland);
 		Thread.sleep(300);
 		String url = driver.getCurrentUrl();
 		Assert.assertTrue(url.equalsIgnoreCase(DeutschlandURL));
 		Thread.sleep(500);
 		homeObject.selectLanguage(CountriesLanguageUSA);
-		getdriver(homePageURL);
 
-	
-	
+
 	}
 }

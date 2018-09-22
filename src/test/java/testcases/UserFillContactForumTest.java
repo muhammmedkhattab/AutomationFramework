@@ -17,7 +17,7 @@ public class UserFillContactForumTest extends TestBase {
 	HomePage homeObject;
 	ContactPage contactObject;
 	PageBase PageObject;
-	
+
 	// WindowHandling();
 	String urlContactPage = DataDriven.getCellData("Prod_TD", "ContactPageURL", 1);
 
@@ -27,20 +27,17 @@ public class UserFillContactForumTest extends TestBase {
 		homeObject = new HomePage(driver);
 		contactObject = new ContactPage(driver);
 		PageObject = new PageBase(driver);
-		
+
 		homeObject.clickOnContactLink();
 
 		PageObject.WindowHandling(driver, urlContactPage);
-		
-		
+
 		contactObject.fillContactForum(Message, Name, email);
 
 		String message = contactObject.successMessage.getText();
 		String regex = ".*(Message|Successfully).*";
 		Assert.assertTrue(message.matches(regex));
-			
-		//Thread.sleep(500);
 		PageObject.redirectToDriver(driver);
-		getdriver(homePageURL);
+
 	}
 }
